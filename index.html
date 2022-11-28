@@ -2,37 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR CODE GENERATOR</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://pngimg.com/uploads/qr_code/qr_code_PNG19.png"
+    />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5583038215571668"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>QR Generator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </head>
 
-<body>
-    <div class="grid">
-        <h2 align="center">QR Code Generator</h2>
-        <center>
-            <div id="imgarea">
-                <img src="" id="img">
-            </div>
-            <button onclick="printIt()">Print QR</button>
-            <select id="size">
-                <option value="100">100x100</option>
-                <option value="150">150x150</option>
-                <option value="200">200x200</option>
-                <option value="250" selected>250x250</option>
-                <option value="300">300x300</option>
-                <option value="350">350x350</option>
-                <option value="400">400x400</option>            
-            </select>
-            <br><br>
-            <textarea placeholder="Enter Your Text" id="qrtext"></textarea>
-            <br><br>
-            <input type="submit" value="Generate QR" onclick="qrGenerator()">
-        </center>
-
-    </div>
+<body onload="showPrint()">
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="./privacy.html">Privacy & Policy</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  
+      <!-- ------------- -->
+  
+      <div class="form">
+        <div class="modal-header justify-content ml-3">
+          <img
+            class="img-cls"
+            src="https://lh3.googleusercontent.com/u82ImruVA_BkcpfI6DQtMY8NFiwZAylI4cIjj5SJHwAu15m6J6sUg4WenFIYEsXyQ0DiD0aitcxZZK6_XiPhrxbTINDQxcOJ4HVzuxSxbfHYS093quXJC_FxkQHChpFapA3BT-L05zLycrlvb599bbC5uq54OS5u3EqyN2kfhkqwqd6Is-_x1ohVxeCHy0HG2D5HxwsUSxMotIBjSm5plLbbGZOMScUAAbQTOsFL7LE5TBY6_pMl35_e7CzKrg6a7sECjROZkhaSeyAXWYpjAFiOyP9dXkol4bRhWahlImo0x_lVzOG02NUdQVr0DarG-CjXTNttiG5rOKZ571dEFV1V8hOQn4riQeV9AwmMHO7vAm_diHO8r1pDkljGK9QiizIFGopxkE5awZsHvs6jEzM9xa48d4t6MPqgXwe_ErtFPmo3flj4QRrFbJL2rdKtnzmlZR7gILQDof1pV4QiKv9eP-MACTv8IyAtpI42czH1smMANrydx4ctJ1O1x8QCsF9Y0CpjGG_O_E4e0cpf9CIQM1LGQOBr4c2o9oihm4ZwPG8skbbSY0-ZGgqdQEpps2RrOuiK7YEwH2tJR71s5AVhY6o7MTxwFLrg_hHkS-ViOdRVrwEZMJTTP1SIZVYs2n6h67CgsW5UdgwfsuvGj1biXqZ7ERazVbd16SyqeOUUPidOzscrbZ_N3dIvNRsA-GhdHG5mi2GQAKcpXKEQoH-mapPPdQftMeEOYBiFktWNE5vuHKpJ_i6ivyzuQkcPNPdk0JlVOO67ilMdJUZThD53IdLLgKuJqSDHLuQmsEqSNq2oM58jTPRmiQWujstl6f5UZFWECLXIGQoGbJ4grue2u2xzbcbnnBJr6Z1o9yMj9nGx8KPKweAao1H0L0hZaXEYfgpWwNWvZDtFrEA8eHIM2PqyM0x6l51SImUrT90bKxNa=w189-h187-no?authuser=0"
+            alt="avatar"
+            class="rounded-circle img-responsive"
+            style="width: 10rem"
+          />
+        </div>
+        <h1>QR Code Generator</h1>
+        <form>
+          <textarea placeholder="Enter Your Text | Link" id="qrtext"></textarea>
+  
+          <button type="button" onclick="qrGenerator()">
+            &#128640; Generate QR
+          </button>
+          <select id="size" class="button dropdown">
+            <option class="dropdown-item" value="100">100 x 100</option>
+            <option class="dropdown-item" value="150">150 x 150</option>
+            <option class="dropdown-item" value="200">200 x 200</option>
+            <option class="dropdown-item" value="250" selected>250 x 250</option>
+            <option class="dropdown-item" value="300">300 x 300</option>
+            <option class="dropdown-item" value="350">350 x 350</option>
+            <option class="dropdown-item" value="400">400 x 400</option>
+          </select>
+          <div id="imgarea">
+            <img onload="showPrint()" src="" id="img" />
+          </div>
+          <button hidden id="prnt" onclick="printIt()">
+            <span class="glyphicon">&#xe045;</span> Print QR
+          </button>
+        </form>
+      </div>
+  
 
 </html>

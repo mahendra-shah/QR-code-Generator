@@ -1,1 +1,167 @@
-* {}
+.form {
+  font-family: Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.5);
+  backdrop-filter: blur(130px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.form h1 {
+  background: radial-gradient(
+      circle at bottom,
+      rgb(104, 105, 104),
+      transparent 30%
+    ),
+    linear-gradient(to top, rgb(20, 54, 88) 0%, transparent 70%),
+    linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4) 70%),
+    #123e69;
+  animation: bg 30s infinite;
+  padding: 20px 0;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -16px -16px 16px -16px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.form input[type="text"],
+.form input[type="url"] {
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 4%;
+  font-size: 17px;
+  color: rgb(9, 61, 125);
+}
+.form input[type="text"]:focus,
+.form input[type="url"]:focus {
+  box-shadow: 0 0 5px #5868bf;
+  padding: 4%;
+  border: 1px solid #5868bf;
+}
+
+.form button {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 180px;
+  margin: 0 auto;
+  padding: 3%;
+  background: #0853b6;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+  cursor: pointer;
+}
+.form button:hover {
+  background: rgba(88, 104, 191, 0.5);
+}
+#qrtext {
+  width: 100%;
+  min-height: 3rem;
+  resize: vertical;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 10;
+}
+#qrcode-container {
+  display: none;
+}
+
+.qrcode {
+  padding: 16px;
+  margin-bottom: 30px;
+}
+.qrcode img {
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(67, 67, 68, 0.25);
+  padding: 4px;
+}
+.button {
+  border-radius: 3px;
+  height: 3.3em;
+  width: 8em;
+  font-weight: 600;
+}
+.modal-header {
+  margin: -8rem 0 -30px 0;
+  align-items: center;
+  justify-content: center;
+}
+.img-cls {
+  border-radius: 5px;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+
+  background: radial-gradient(
+      circle at bottom,
+      rgb(105, 104, 104),
+      transparent 80%
+    ),
+    linear-gradient(to top, rgb(20, 54, 88) 0%, transparent 80%),
+    linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4) 70%),
+    #123e69;
+  animation: bg 30s infinite;
+}
+@keyframes bg {
+  0%,
+  100% {
+    background-color: #0a3561;
+  }
+  25% {
+    background-color: #17581f;
+  }
+  50% {
+    background-color: #61561b;
+  }
+  75% {
+    background-color: #6e244d;
+  }
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #097e57;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
